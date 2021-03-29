@@ -93,7 +93,7 @@ class ProcessStats(Process):
 				print('[Time: %8d] '
 					  '[Episode: %8d Score: %10.4f] '
 					  '[RScore: %10.4f RPPS: %5d] '
-					  '[PPS: %5d TPS: %5d] '
+					  '[FPS: %5d TPS: %5d] '
 					  '[NT: %2d NP: %2d NA: %2d]'
 					% (int(time.time()-self.start_time),
 					   self.episode_count.value,

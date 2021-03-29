@@ -134,6 +134,9 @@ class ProcessAgent(Process):
 
                 # Prediction
                 # print("[ProcessAgent]", "i:", i, "agent_observation:", agent_observation)
+                # time.sleep(1)
+                #print("Printing agent_" + str(i) + "_observation...")
+                #print(agent_observation)
                 prediction, value = self.predict(agent_observation)
 
                 # Select action

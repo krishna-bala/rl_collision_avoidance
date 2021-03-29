@@ -140,15 +140,18 @@ class TrainPhase1(Train):
         Train.__init__(self)
         self.TRAIN_VERSION = self.LOAD_REGRESSION_THEN_TRAIN_RL
         if self.MULTI_AGENT_ARCH == self.MULTI_AGENT_ARCH_RNN:
-            self.LOAD_FROM_WANDB_RUN_ID = 'run-rnn'
-        elif self.MULTI_AGENT_ARCH == self.MULTI_AGENT_ARCH_WEIGHT_SHARING:
-            self.LOAD_FROM_WANDB_RUN_ID = 'run-ws-'+str(self.MAX_NUM_OTHER_AGENTS_OBSERVED+1)
-        self.EPISODE_NUMBER_TO_LOAD = 0
+            # self.LOAD_FROM_WANDB_RUN_ID = 'run-rnn'
+            self.LOAD_FROM_WANDB_RUN_ID = 'IROS18'
+        # elif self.MULTI_AGENT_ARCH == self.MULTI_AGENT_ARCH_WEIGHT_SHARING:
+        #     self.LOAD_FROM_WANDB_RUN_ID = 'run-ws-'+str(self.MAX_NUM_OTHER_AGENTS_OBSERVED+1)
+        # self.EPISODE_NUMBER_TO_LOAD = 0
+        self.EPISODE_NUMBER_TO_LOAD = 1900000
 
-        self.EPISODES                = 1500000 # Total number of episodes and annealing frequency
-        self.ANNEALING_EPISODE_COUNT = 1500000
+        self.EPISODES = self.EPISODE_NUMBER_TO_LOAD + 1500000 # Total number of episodes and annealing
+        # frequency
+        self.ANNEALING_EPISODE_COUNT = self.EPISODE_NUMBER_TO_LOAD + 1500000
 
-        self.SPECIAL_EPISODES_TO_SAVE = [1490000, 1500000]
+        self.SPECIAL_EPISODES_TO_SAVE = [self.EPISODE_NUMBER_TO_LOAD + 1490000, self.EPISODE_NUMBER_TO_LOAD + 1500000]
 
 class TrainPhase2(Train):
     def __init__(self):

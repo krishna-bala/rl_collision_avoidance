@@ -49,6 +49,7 @@ class Server:
             self.num_actions = gridworld_actions.num_actions
         elif Config.GAME_CHOICE == Config.game_collision_avoidance:
             self.actions = CA_Actions()
+            print(self.actions.actions)
             self.num_actions = self.actions.num_actions
         else:
             raise ValueError("[ ERROR ] Server game choice invalid!")
