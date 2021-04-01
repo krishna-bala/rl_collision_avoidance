@@ -233,6 +233,11 @@ class NetworkVPCore(object):
         return int(re.split('/|_|\.', filename)[-1])
 
     def save(self, episode, learning_method='RL'):
+        print("================")
+        print("Episode Count: ", episode)
+        print("================")
+        print("Filename: ", self._checkpoint_filename(episode, learning_method=learning_method, mode='save'))
+        print("================")
         self.saver.save(self.sess, self._checkpoint_filename(episode, learning_method=learning_method, mode='save'))
 
     def load(self, learning_method='RL'):
