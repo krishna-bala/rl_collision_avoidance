@@ -4,6 +4,8 @@ import numpy as np
 import tensorflow as tf
 from GA3C import Config
 
+from datetime import datetime
+
 
 class NetworkVPCore(object):
     def __init__(self, device, model_name, num_actions):
@@ -28,7 +30,16 @@ class NetworkVPCore(object):
             self.checkpoints_save_dir = os.path.join(wandb.run.dir,"checkpoints")
             wandb.save(os.path.join(self.checkpoints_save_dir,"network*"), base_path=wandb.run.dir)
         else:
-            self.checkpoints_save_dir = os.path.dirname(os.path.realpath(__file__)) + '/checkpoints/RL_tmp'
+            base_dir = os.path.dirname(os.path.realpath(__file__)) + '/checkpoints/RL_tmp/'
+            exp_date = datetime.now().strftime("%Y-%m-%d/")
+            folder = base_dir + exp_date
+            if not os.path.exists(folder):
+                os.mkdir(folder)
+            exp_time = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+            folder += exp_time
+
+            # self.checkpoints_save_dir = os.path.dirname(os.path.realpath(__file__)) + '/checkpoints/RL_tmp'
+            self.checkpoints_save_dir = folder
 
         # Initialize DNN TF computation graph
         self.device = device
