@@ -8,7 +8,7 @@
 wandb-*
 code
 
-RL_tmp
+# RL_tmp
 
 # Ignore everything in RL and regression EXCEPT the two dirs
 RL/wandb/*

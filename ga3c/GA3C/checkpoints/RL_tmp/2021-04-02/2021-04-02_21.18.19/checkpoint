@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/krish/WRK/rl_collision_avoidance/ga3c/GA3C/checkpoints/RL_tmp/2021-04-02/2021-04-02_21.18.19/network_00005000"
+all_model_checkpoint_paths: "/home/krish/WRK/rl_collision_avoidance/ga3c/GA3C/checkpoints/RL_tmp/2021-04-02/2021-04-02_21.18.19/network_00005000"
