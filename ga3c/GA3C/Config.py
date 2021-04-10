@@ -126,7 +126,7 @@ class Train(EnvConfig):
         self.TENSORBOARD                  = True # Enable TensorBoard
         self.TENSORBOARD_UPDATE_FREQUENCY = 100 # Update TensorBoard every X training steps
         self.SAVE_MODELS                  = True # Enable to save models every SAVE_FREQUENCY episodes
-        self.SAVE_FREQUENCY               = 50000 # Save every SAVE_FREQUENCY episodes
+        self.SAVE_FREQUENCY               = 5000 # Save every SAVE_FREQUENCY episodes
         self.SPECIAL_EPISODES_TO_SAVE = [] # Save these episode numbers, in addition to ad SAVE_FREQUENCY 
         self.PRINT_STATS_FREQUENCY        = 1 # Print stats every PRINT_STATS_FREQUENCY episodes
         self.STAT_ROLLING_MEAN_WINDOW     = 1000 # The window to average stats
