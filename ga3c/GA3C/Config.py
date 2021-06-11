@@ -37,7 +37,11 @@ class Train(EnvConfig):
             self.MAX_NUM_AGENTS_TO_SIM = 4
 
         # self.STATES_IN_OBS = ['is_learning', 'num_other_agents', 'dist_to_goal', 'heading_ego_frame', 'pref_speed', 'radius', 'laserscan']
-        self.STATES_IN_OBS = ['is_learning', 'num_other_agents', 'dist_to_goal', 'heading_ego_frame', 'pref_speed', 'radius', 'other_agents_states']
+        # self.STATES_IN_OBS = ['is_learning', 'num_other_agents', 'dist_to_goal', 'heading_ego_frame', 'pref_speed',
+        #                      'radius', 'other_agents_states']
+        self.STATES_IN_OBS = ['is_learning', 'num_other_agents', 'dist_to_goal', 'heading_ego_frame',
+                              'theta_x_ego_frame', 'theta_y_ego_frame', 'theta_x_dot_ego_frame',
+                              'theta_y_dot_ego_frame', 'pref_speed', 'radius', 'other_agents_states']
         self.STATES_NOT_USED_IN_POLICY = ['is_learning']
 
         self.MULTI_AGENT_ARCH_RNN, self.MULTI_AGENT_ARCH_WEIGHT_SHARING, self.MULTI_AGENT_ARCH_LASERSCAN = range(3)
